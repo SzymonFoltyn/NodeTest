@@ -1,27 +1,30 @@
 var express = require('express');
 var app = express();
-var google = require('google');
 
 app.use(express.static('public'));
 
-google.resultsPerPage = 5;
-var next = 0;
 
-app.get('myAction', function(req, res){
-    res.send('Link:' + req.body.search);
-})
-google('', function(err, res){
+var url = "https://www.google.pl/?gws_rd=ssl#q=";
+app.get(url + 'q', function(err, teq, res){
     if (err)
         res.send('Error');
         console.log(err);
     for(var i = 0; i < res.links.length; i++){
         var link = res.links[i];
         console.log(link + ' ' + link.href);
-        console.log(link.description);
-//        res.send(link + ' ' + link.href);
-//        res.send(link.description);
     }   
 })
+
+app.get('userId', function(req, res) {
+    var userId = req.params.userId;
+    console.log('Requested userId: ' + userId);
+    res.send('<!DOCTYPE html><html lang="en"><head>'
+        + '<meta charset="utf-8">'
+        + '<title>' + userId + '</title>'
+        + '</head><body>'
+        + '<h1><tt>' + userId + '</tt></h1>'
+        + '</body></html>');
+});
 
 var server = app.listen(3000, function(){
     var host = server.address().address
@@ -29,4 +32,5 @@ var server = app.listen(3000, function(){
     
     console.log('Server connected by port: ' + port);
 })
+
 

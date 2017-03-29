@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search</title>
+    <title>Check</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="stylesheets/check_style.css">    
+    <link rel="stylesheet" type="text/css" href="stylesheets/check_style.css">
 </head>
 <body>
     <header>
-       <h3>Upps! Something goes wrong!</h3>
-    </header>
-     
+    <form method="get" action='https://jsonplaceholder.typicode.com/posts'>
+        <input id="search-box" name="userId" size="40" type="text" placeholder="Select User ID. Please"/>
+        <input id="search-btn" value="Find" type="submit"/>
+    </form>
+    
+   <h2>RESULTS</h2>
+  </header>
 </body>
 </html>
