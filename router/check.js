@@ -1,6 +1,10 @@
- module.exports = function(app)
- {
-    var post = app.get('userId', function(req, res, next) {
-        var userId = req.params.userId;
+module.exports = function(app)
+{
+    app.get('https://jsonplaceholder.typicode.com/posts/:userId', function(req, res) {
+        res.send(req.params.userId);
+        console.log(res);
     });
- }
+
+}
+
+

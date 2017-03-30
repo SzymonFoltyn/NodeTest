@@ -2,17 +2,20 @@
 <html>
 <head>
     <title>Check</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!--     <script src="javascripts/script_check.js"></script>-->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheets/check_style.css">
 </head>
 <body>
     <header>
-    <form method="get" action='https://jsonplaceholder.typicode.com/posts'>
-        <input id="search-box" name="userId" size="40" type="text" placeholder="Select User ID. Please"/>
-        <input id="search-btn" value="Find" type="submit"/>
+    <form id="form" method="get" action=''>
+        <input id="search-box" name="userId" size="40" type="text" placeholder="Input User ID"/>
+        <input id="search-btn" value="Search" type="submit"/>
     </form>
     
    <h2>RESULTS</h2>
+    <div id='result'></div>  
   </header>
 </body>
 </html>
